@@ -1,0 +1,1537 @@
+/* .about-content */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+}
+    
+body {
+    background: #030b16;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.custom-navbar {
+    min-height: 75px;
+    background: rgba(3, 11, 22, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+}
+
+.logo {
+    color: white !important;
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span,
+.footer-logo span {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #168cff;
+    border-radius: 10px;
+    color: #168cff;
+    box-shadow: 0 0 18px rgba(22,140,255,0.3);
+}
+
+.navbar-toggler {
+    color: white;
+    font-size: 22px;
+}
+
+.nav-link {
+    color: #9da8b8 ;
+    font-size: 13px;
+    padding: 8px 5px ;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white ;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #168cff;
+}
+
+.nav-link {
+position: relative;
+color: white;
+font-size: 13px;
+padding: 8px 5px;
+transition: color 0.3s ease;
+}
+
+.nav-link::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 0;
+height: 2px;
+background: #168cff;
+transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+color: white;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+width: 100%;
+}
+
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 17px;
+    border: 1px solid #168cff;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.cv-btn:hover {
+    background: #168cff;
+    color: white;
+    box-shadow: 0 0 20px rgba(22,140,255,.4);
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.home {
+    min-height: 100vh;
+    padding: 120px 7% 80px;
+    overflow: hidden;
+    /* Home image ka cirlce color */
+    background:radial-gradient(circle at 75% 50%,rgba(0,100,255,.18),transparent 35%);
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+}
+
+.home h1 {
+    font-size: clamp(50px, 7vw, 85px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin-bottom: 18px;
+}
+
+.home h1 span,
+.section-heading h2 span,
+.about-content h2 span {
+    background: linear-gradient(90deg,#168cff,#704cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home h2 {
+    color: #45aaff;
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.hello {
+    font-size: 20px;
+}
+
+.description {
+    max-width: 590px;
+    color: white;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.social a:hover {
+    background: #168cff;
+    border-color: #168cff;
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-primary-custom,
+.btn-secondary-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.btn-primary-custom {
+    color: white;
+    background: linear-gradient(90deg,#087cff,#694cff);
+}
+
+.btn-primary-custom:hover {
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,100,255,.4);
+}
+
+.btn-secondary-custom {
+    color: white;
+    border: 1px solid #168cff;
+}
+
+.btn-secondary-custom:hover {
+    color: white;
+    background: #168cff;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.home-image {
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-circle {
+    width: 300px;
+    height: 300px;
+    padding: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00a2ff, #694cff,#00a2ff);
+    z-index: 3;
+    /* animation: floating 5s ease-in-out infinite; */
+    box-shadow: 0 0 35px rgba(0,140,255,.4);
+}
+
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 50%;
+    border: 5px solid #06101d;
+}
+
+
+
+.circle-one,
+.circle-two {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(0,140,255,.4);
+}
+
+.circle-two {
+    width: 410px;
+    height: 410px;
+    border: 2px solid rgba(100,70,255,.25);
+    animation: rotate 15s linear infinite;
+}
+
+
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+.hobbies{
+    padding: 100px 7%;
+}
+
+.education,
+.skills,
+.projects {
+    padding: 75px 7%;
+}
+
+.about,
+.skills,
+.hobbies {
+    background: #050d18;
+}
+
+.education,
+.projects,
+.contact {
+    background: #030b16;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-heading p {
+    color: #168cff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+/* PREMIUM ABOUT CARD */
+
+.about-box {
+    width: 330px;
+    max-width: 100%;
+    min-height: 420px;
+    padding: 35px 25px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border: 1px solid rgba(22, 140, 255, 0.35);
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(22, 140, 255, 0.17),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #0b1728,
+            #060d19 65%,
+            #100d25
+        );
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+    transition: transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+/* Animated glow */
+
+.about-card-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translateX(-50%);
+
+    background: #168cff;
+    filter: blur(100px);
+    opacity: 0.18;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.about-box:hover {
+    transform: translateY(-10px);
+    border-color: #704cff;
+
+    box-shadow:
+        0 25px 60px rgba(22, 140, 255, 0.15),
+        0 0 30px rgba(112, 76, 255, 0.12);
+}
+
+/* Developer icon */
+
+.about-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(22, 140, 255, 0.45);
+    border-radius: 17px;
+
+    background: rgba(22, 140, 255, 0.10);
+    color: #45aaff;
+
+    font-size: 23px;
+
+    box-shadow: 0 0 25px rgba(22, 140, 255, 0.12);
+
+    transition: 0.35s ease;
+}
+
+.about-box:hover .about-icon {
+    color: white;
+    background: linear-gradient(135deg, #168cff, #704cff);
+    transform: rotate(-6deg) scale(1.08);
+}
+
+/* HS initials */
+
+.about-initials {
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -4px;
+    margin-bottom: 20px;
+
+    color: white;
+}
+
+.about-initials span {
+    background: linear-gradient(135deg, #168cff, #704cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Name */
+
+.about-box h3 {
+    margin-bottom: 10px;
+    font-size: 27px;
+    font-weight: 700;
+    color: white;
+
+    transition: color 0.3s ease;
+}
+
+.about-box:hover h3 {
+    color: #a9cfff;
+}
+
+/* Designation */
+
+.about-box .about-role {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #45aaff;
+}
+
+/* Divider */
+
+.about-divider {
+    width: 65px;
+    height: 3px;
+    margin: 22px 0;
+
+    border-radius: 10px;
+    background: linear-gradient(90deg, #168cff, #704cff);
+}
+
+/* Description */
+
+.about-box .about-description {
+    max-width: 240px;
+    margin-bottom: 22px;
+
+    color: #b8c4d6;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Technology badges */
+
+.about-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.about-badges span {
+    padding: 9px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.035);
+    color: #e4eaf5;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.about-badges span i {
+    margin-right: 5px;
+    color: #45aaff;
+}
+
+.about-badges span:hover {
+    border-color: #704cff;
+    background: rgba(112, 76, 255, 0.12);
+    transform: translateY(-3px);
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    .about-box {
+        width: 300px;
+        min-height: 400px;
+        padding: 30px 20px;
+    }
+
+    .about-initials {
+        font-size: 58px;
+    }
+
+    .about-box h3 {
+        font-size: 25px;
+    }
+}
+
+
+.about-content h2 {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.about-content > p:not(.section-tag) {
+   color: #ebeef3;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 650px;
+}
+
+.section-tag {
+    color: #168cff;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   INFO CARDS
+========================================================= */
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    background: rgba(255,255,255,.025);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    border-color: #168cff;
+}
+
+.info-item i,
+.edu-icon,
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(22,140,255,.1);
+    color: #168cff;
+}
+
+.info-item h4 {
+    font-size: 14px;
+    color: #168cff;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-card,
+.skill-card,
+.project-card,
+.hobby-card {
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    background: rgba(255,255,255,.025);
+    transition: .3s;
+}
+
+.education-card {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.education-card:hover,
+.skill-card:hover,
+.project-card:hover,
+.hobby-card:hover {
+    transform: translateY(-8px);
+    border-color: #168cff;
+    box-shadow: 0 15px 40px rgba(0,100,255,.12);
+}
+
+.edu-year {
+    color: #45aaff;
+    font-size: 12px;
+}
+
+.edu-content h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.edu-content h4 {
+    color:white;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.edu-content p {
+    color:white;
+    font-size: 13px;
+    line-height: 1.7;
+}
+.education {
+    min-height: 100vh;
+    padding: 65px 7% 40px;
+}
+
+.skills {
+    min-height: 100vh;
+    padding: 55px 7% 35px;
+}
+
+.projects {
+    padding: 75px 7%;
+}
+
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-card {
+    height: 220px;
+    padding: 22px;
+}
+
+.skill-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color:white;
+    font-size: 12px;
+}
+
+.skill-progress {
+    height: 5px;
+    background: #172333;
+}
+
+.skill-progress .progress-bar {
+    background: linear-gradient(90deg,#168cff,#704cff);
+}
+
+
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-card {
+    overflow: hidden;
+}
+
+.project-image {
+    height: 190px;
+    overflow: hidden;
+    background: #0a1422;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+}
+
+.project-content {
+    padding: 22px;
+}
+
+.project-type {
+    color: #168cff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-content h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.project-content p {
+    color:white;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 10px;
+    padding: 10px 17px;
+    border: 1px solid #168cff;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.project-btn:hover {
+    background: #168cff;
+    color: white;
+    transform: translateX(4px);
+}
+
+.back-profile {
+    text-align: center;
+    padding: 35px 0;
+        }
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: white;
+    background: linear-gradient(135deg,#168cff,#704cff);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 10px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow:0 8px 20px rgba(22,140,255,0.20);
+}
+
+
+/* =========================================================
+   HOBBIES
+========================================================= */
+
+.hobby-card {
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.hobby-icon {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #168cff, #7b2cff);
+    font-size: 25px;
+}
+
+.hobby-card h3 {
+    margin: 20px 0 10px;
+    font-size: 19px;
+}
+
+.hobby-card p {
+    color:white;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info,
+.contact-form {
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    background: rgba(255,255,255,.025);
+}
+
+.contact-info h3 {
+    font-size: 24px;
+}
+
+.contact-info > p {
+    color: white;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 17px 0;
+}
+
+.contact-item i {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(22,140,255,.12);
+    color: #168cff;
+}
+
+.contact-item h4 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.contact-item p,
+.contact-item a {
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 0;
+}
+
+.contact-item a:hover {
+    color: #168cff;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form .form-control {
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    background: #071321;
+    color: white;
+    font-size: 13px;
+}
+
+.contact-form .form-control::placeholder {
+    color: #788598;
+}
+
+.contact-form .form-control:focus {
+    background: #071321;
+    color: white;
+    border-color: #168cff;
+    box-shadow: none;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-submit {
+    width: fit-content;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#168cff,#7b2cff);
+    color: white;
+    font-size: 13px;
+}
+
+.contact-submit:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.map {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    padding: 45px 7% 20px;
+    background: #020812;
+    border-top: 1px solid rgba(255,255,255,.08);
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer-logo span {
+    width: 38px;
+    height: 38px;
+}
+
+.footer-content p {
+    color:white;
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+    color: #8c98aa;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: white;
+    background: #168cff;
+    border-color: #168cff;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+    font-size: 12px;
+}
+
+.footer-bottom p {
+    color:white;
+}
+
+.footer-bottom a {
+    color: #168cff;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   LARGE TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .home {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .about,
+    .education,
+    .skills,
+    .projects,
+    .hobbies,
+    .contact {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .navbar-nav {
+        gap: 5px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .custom-navbar {
+        min-height: 70px;
+    }
+
+    .navbar-collapse {
+        padding: 15px 0 20px;
+        background: #030b16;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        align-items: center;
+        gap: 0 !important;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: inline-block;
+        padding: 10px 15px !important;
+    }
+
+    .cv-btn {
+        margin: 12px auto 0;
+    }
+
+    .home {
+        padding-top: 120px;
+    }
+
+    .home-image {
+        min-height: 430px;
+        margin-top: 20px;
+    }
+
+    .about,
+    .education,
+    .skills,
+    .projects,
+    .hobbies,
+    .contact {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    .about-box {
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        text-align: left;
+    }
+
+    .contact-form {
+        height: auto !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .custom-navbar {
+        min-height: 65px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .logo span {
+        width: 36px;
+        height: 36px;
+    }
+
+    .home {
+        min-height: auto;
+        padding: 115px 5% 70px;
+        text-align: center;
+    }
+
+    .home h1 {
+        font-size: clamp(45px, 14vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .home h2 {
+        font-size: 21px;
+        line-height: 1.5;
+    }
+
+    .hello {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0 auto;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        padding: 13px 19px;
+    }
+
+    .home-image {
+        min-height: 350px;
+        margin-top: 20px;
+    }
+
+    .profile-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle-one {
+        width: 295px;
+        height: 295px;
+    }
+
+    .circle-two {
+        width: 345px;
+        height: 345px;
+    }
+
+    .about,
+    .education,
+    .skills,
+    .projects,
+    .hobbies,
+    .contact {
+        padding: 75px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 34px;
+        line-height: 1.25;
+    }
+
+    .about-box {
+        width: 280px;
+        height: 320px;
+        padding: 30px;
+    }
+
+    .about-box span {
+        font-size: 42px;
+    }
+
+    .about-box h3 {
+        font-size: 28px;
+    }
+
+    .about-content {
+        text-align: left;
+    }
+
+    .about-content > p:not(.section-tag) {
+        font-size: 14px;
+    }
+
+    .education-card {
+        padding: 22px;
+        gap: 15px;
+    }
+
+    .edu-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+    }
+
+    .edu-content h3 {
+        font-size: 17px;
+    }
+
+    .edu-content p {
+        font-size: 12px;
+    }
+
+    .skill-card {
+        padding: 25px;
+    }
+
+    .project-image {
+        height: 210px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .hobby-card {
+        padding: 30px 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 22px;
+    }
+
+    .map {
+        height: 220px;
+    }
+
+    .footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .home {
+        padding-top: 105px;
+    }
+
+    .home h1 {
+        font-size: 48px;
+    }
+
+    .home h2 {
+        font-size: 19px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        width: 100%;
+    }
+
+    .home-image {
+        min-height: 310px;
+    }
+
+    .profile-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .circle-one {
+        width: 260px;
+        height: 260px;
+    }
+
+    .circle-two {
+        width: 305px;
+        height: 305px;
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 29px;
+    }
+
+    .education-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .edu-content {
+        text-align: center;
+    }
+
+    .info-item {
+        padding: 15px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .contact-item {
+        align-items: flex-start;
+    }
+
+    .contact-item i {
+        margin-top: 2px;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+
+    .map {
+        height: 200px;
+    }
+
+    .footer-logo {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .home h1 {
+        font-size: 42px;
+    }
+
+    .profile-circle {
+        width: 195px;
+        height: 195px;
+    }
+
+    .circle-one {
+        width: 230px;
+        height: 230px;
+    }
+
+    .circle-two {
+        width: 270px;
+        height: 270px;
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 26px;
+    }
+
+    .education-card {
+        padding: 18px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 18px;
+    }
+}
+
+/* ================= SECTION SCROLL FIX ================= */
+
+#home,
+#about,
+#education,
+#skills,
+#projects,
+#hobbies,
+#contact {
+    scroll-margin-top: 75px;
+}

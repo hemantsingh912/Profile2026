@@ -1,0 +1,1185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Projects | Hemant Singh</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"rel="stylesheet">
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #030b16;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .top-navbar {
+            background: rgba(2, 10, 22, 0.96);
+            border-bottom: 1px solid rgba(0, 140, 255, 0.18);
+            padding: 12px 0;
+        }
+
+        .logo-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg,#087cff,#704cff);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 0 18px rgba(0, 132, 255, 0.25);
+        }
+
+        .brand-name {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .cv-btn {
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.04);
+            border-radius: 20px;
+            padding: 7px 15px;
+            font-size: 11px;
+            transition: 0.3s;
+        }
+
+        .cv-btn:hover {
+            color: #ffffff;
+            border-color: #168cff;
+            background: #168cff;
+            transform: translateY(-2px);
+        }
+
+        .project-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 45px 0 38px;
+            background:radial-gradient(circle at 80% 50%, rgba(0, 119, 255, 0.20),transparent 35%),
+                linear-gradient(135deg,#031325,#061a34,#030b16);
+            border-bottom: 1px solid rgba(0, 140, 255, 0.16);
+        }
+
+        .project-hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            right: -120px;
+            top: -150px;
+            border-radius: 50%;
+            background: rgba(36, 108, 255, 0.10);
+            filter: blur(10px);
+        }
+
+        .small-title {
+            color: #168cff;
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .hero-title {
+            font-size: clamp(30px, 5vw, 45px);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-title span {
+            color: #168cff;
+        }
+
+        .hero-description {
+            max-width: 580px;
+            color: white;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .hero-code {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .code-box {
+            position: relative;
+            width: 190px;
+            height: 125px;
+            border: 1px solid rgba(0, 140, 255, 0.45);
+            border-radius: 14px;
+            background: linear-gradient(145deg,#0a2744,#061525);
+            box-shadow:0 0 35px rgba(0, 115, 255, 0.20);
+            transform:perspective(500px)rotateY(-10deg);
+        }
+
+        .code-screen {
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #168cff;
+            font-size: 40px;
+        }
+
+        .code-tags {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .code-tags span {
+            font-size: 8px;
+            padding: 3px 7px;
+            border-radius: 4px;
+            background: #168cff;
+            color: white;
+        }
+
+        .code-tags span:nth-child(2) {
+            background: #704cff;
+        }
+
+        .code-tags span:nth-child(3) {
+            background: #00b894;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 18px;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .section-title p {
+            color:white;
+            font-size: 10px;
+            margin: 0;
+        }
+
+        .section-title h2 i {
+            color: #168cff;
+            margin-right: 7px;
+        }
+
+        .project-card {
+            height: 100%;
+            background: linear-gradient(145deg,rgba(7, 26, 46, 0.95),rgba(3, 14, 27, 0.98));
+
+            border: 1px solid rgba(0, 140, 255, 0.13);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s ease;
+            box-shadow:0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(22,140,255,0.55);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.25),
+                0 0 20px rgba(22,140,255,0.08);
+        }
+
+        .project-image {
+            height: 135px;
+            width: 100%;
+            object-fit: cover;
+            background: #07182b;
+        }
+
+        .project-content {
+            padding: 13px;
+        }
+
+        .project-badge {
+            display: inline-block;
+            color: #168cff;
+            background:rgba(22,140,255,0.10);
+            border:1px solid rgba(22,140,255,0.18);
+            border-radius: 10px;
+            padding: 3px 7px;
+            font-size: 8px;
+            margin-bottom: 7px;
+        }
+
+        .project-title {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .project-description {
+            color: white;
+            font-size: 9px;
+            line-height: 1.55;
+            min-height: 30px;
+            margin-bottom: 12px;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .view-btn,
+        .github-btn {
+            font-size: 9px;
+            border-radius: 15px;
+            padding: 6px 9px;
+            transition: 0.3s;
+        }
+
+        .view-btn {
+            color: white;
+            background: #168cff;
+            border: 1px solid #168cff;
+        }
+
+        .view-btn:hover {
+            color: white;
+            background: #006edc;
+        }
+
+        .github-btn {
+            color: #aebaca;
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.12);
+        }
+
+        .github-btn:hover {
+            color: white;
+            border-color: #168cff;
+        }
+
+
+        .program-card {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px;
+            background:rgba(5, 20, 36, 0.90);
+            border:1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-4px);
+            border-color:rgba(22,140,255,0.35);
+        }
+
+        .program-icon {
+            min-width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 24px;
+            background:rgba(22,140,255,0.08);
+            color: #168cff;
+            border:1px solid rgba(22,140,255,0.13);
+        }
+
+        .program-title {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .program-text {
+            color: white;
+            font-size: 8px;
+            line-height: 1.5;
+            margin-bottom: 7px;
+        }
+
+        .small-view {
+            font-size: 8px;
+            color: #168cff;
+        }
+
+        .back-profile {
+            text-align: center;
+            padding: 35px 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: white;
+            background:linear-gradient(135deg,#168cff,#704cff);
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-size: 10px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow:0 8px 20px rgba(22,140,255,0.20);
+        }
+
+        @media (max-width: 767px) {
+
+            .project-hero {
+                padding: 35px 0;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-description {
+                font-size: 12px;
+            }
+
+            .hero-code {
+                display: none;
+            }
+
+            .project-image {
+                height: 170px;
+            }
+
+            .project-content {
+                padding: 14px;
+            }
+
+            .program-card {
+                min-height: 90px;
+            }
+        }
+
+
+        @media (max-width: 400px) {
+
+            .brand-name {
+                font-size: 12px;
+            }
+
+            .cv-btn {
+                padding: 6px 10px;
+                font-size: 9px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header class="top-navbar">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+                <div class="logo-box">HS</div>
+                <span class="brand-name">Hemant Singh</span>
+            </div>
+
+            <a href="Hemant_Singh_Resume2026.pdf" class="cv-btn">
+                <i class="bi bi-download"></i>
+                Download Resume
+            </a>
+        </div>
+    </div>
+
+</header>
+
+
+<section class="project-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <div class="small-title">MY PORTFOLIO</div>
+
+                <h1 class="hero-title">All <span>Projects</span></h1>
+
+                <p class="hero-description">Here you can explore all my projects.
+                    Each project is built with different
+                    technologies and serves a real-world purpose.
+
+                </p>
+
+            </div>
+
+
+            <!-- Hero Design -->
+
+            <div class="col-lg-5 hero-code">
+
+                <div class="code-box">
+
+                    <div class="code-screen">
+
+                        <i class="bi bi-code-slash"></i>
+
+                    </div>
+
+                    <div class="code-tags">
+
+                        <span>HTML</span>
+
+                        <span>CSS</span>
+
+                        <span>JS</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<main class="container">
+
+    <div class="section-title">
+        <h2>
+            <i class="bi bi-code-slash"></i>
+            Web Projects
+        </h2>
+        
+    </div>
+
+
+    <!-- ================= PROJECT 1 ================= -->
+    <div class="row g-3">
+  
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="project-card">
+
+                <img
+                    src="image/pw.png"
+                    class="project-image"
+                    alt="Hotel Management">
+                <div class="project-content">
+
+                    <span class="project-badge">WordPress</span>
+
+                    <h3 class="project-title">
+                        WordPress Profile
+                    </h3>
+
+                    <p class="project-description">
+                        A personal portfolio website built
+                        using WordPress with responsive design.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsinghdev.blog/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= PROJECT 2 ================= -->
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="project-card">
+
+                <img
+                    src="image/hotel.png"
+                    class="project-image"
+                    alt="Hotel Management">
+                <div class="project-content">
+
+                    <span class="project-badge">WordPress</span>
+
+                    <h3 class="project-title">
+                        Hotel Management
+                    </h3>
+
+                    <p class="project-description">
+                        A professional hotel booking website
+                        with rooms, food and booking sections.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsinghdev.blog/hotal/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= PROJECT 3 ================= -->
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="project-card">
+
+                <img
+                    src="image/flower.png"
+                    class="project-image"
+                    alt="Flower Website">
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS 
+                    </span>
+
+                    <h3 class="project-title">
+                        Flower Website
+                    </h3>
+
+                    <p class="project-description">
+                        A beautiful flower website with
+                        responsive design and smooth UI.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/flower-Web-site/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/flower-Web-site.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= PROJECT 4 ================= -->
+
+        
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img
+                    src="image/bike.png"
+                    class="project-image"
+                    alt="Bike Website"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS 
+                    </span>
+
+                    <h3 class="project-title">
+                        Bike Website
+                    </h3>
+
+                    <p class="project-description">
+                        A modern bike showcase website
+                        with attractive responsive UI.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/BikeWebsite/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/BikeWebsite.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= PROJECT 5 ================= -->
+
+       <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img src="image/digitalc.png"class="project-image"alt="Digital Clock">
+
+                <div class="project-content">
+                    <span class="project-badge">HTML / CSS / JS</span>
+                    <h3 class="project-title">Digital Clock</h3>
+
+                    <p class="project-description">
+                        A simple digital clock with
+                        real-time date and time.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/Digital-Clock/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/Digital-Clock.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- ================= PROJECT 6 ================= -->
+
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img src="image/calculator.png" class="project-image"alt="Calculator">
+
+                <div class="project-content">
+
+                    <span class="project-badge"> HTML / CSS / JS</span>
+
+                    <h3 class="project-title">
+                        Calculator
+                    </h3>
+
+                    <p class="project-description">
+                        A clean and responsive calculator
+                        with basic arithmetic operations.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/Calculator/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/Calculator.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= PROJECT 7 ================= -->
+<div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img
+                    src="image/agecalculator.png"
+                    class="project-image"
+                    alt="Age Calculator"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS / JS
+                    </span>
+
+                    <h3 class="project-title">
+                        Age Calculator
+                    </h3>
+
+                    <p class="project-description">
+                        Calculate exact age in years,
+                        months and days.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/Age-Calculator/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/Digital-Clock.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- ================= PROJECT 8 ================= -->
+
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img
+                    src="image/quiz.png"
+                    class="project-image"
+                    alt="Quiz"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS
+                    </span>
+
+                    <h3 class="project-title">
+                        Programing QUIZ
+                    </h3>
+
+                    <p class="project-description">
+                        A simple programming quiz with
+                        multiple-choice questions.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/Quiz/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/Quiz.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+         
+
+
+        <!-- ================= PROJECT 9 ================= -->
+
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img
+                    src="image/newyear.png"
+                    class="project-image"
+                    alt="New Year Countdown"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS / JS
+                    </span>
+
+                    <h3 class="project-title">
+                        New Year Countdown
+                    </h3>
+
+                    <p class="project-description">
+                        Countdown to the new year
+                        with a festive design.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/new-year/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/new-year.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= PROJECT 10 ================= -->
+
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img
+                    src="image/normalc.png"
+                    class="project-image"
+                    alt="Normal Cards"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS
+                    </span>
+
+                    <h3 class="project-title">
+                        Normal Cards
+                    </h3>
+
+                    <p class="project-description">
+                        A collection of beautiful responsive
+                        UI cards for websites.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/cards/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/cards.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= PROJECT 11 ================= -->
+
+        
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img
+                    src="image/ACards.png"
+                    class="project-image"
+                    alt="Avengers Cards"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS
+                    </span>
+
+                    <h3 class="project-title">
+                        Avengers Cards
+                    </h3>
+
+                    <p class="project-description">
+                        A superhero card collection with
+                        attractive hover effects.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="https://hemantsingh912.github.io/Averenger-cards/" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                            View Project
+                        </a>
+
+                        <a href="https://github.com/hemantsingh912/Averenger-cards.git" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= PROJECT 12 ================= -->
+
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="project-card">
+
+                <img
+                    src="image/phototype.png"
+                    class="project-image"
+                    alt="Avengers Cards"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-badge">
+                        HTML / CSS / JS / Node.js
+                    </span>
+
+                    <h3 class="project-title">
+                        PhotoVault – Secure Gallery (Firebase Server)
+                    </h3>
+
+                    <p class="project-description">
+                       A password-protected photo gallery web application with secure PIN-based login, photo upload and download features, and Gmail OTP-based PIN recovery.
+
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="#" class="view-btn" target="_blank">
+                            <i class="bi bi-eye"></i>
+                             Processing
+                        </a>
+
+                        <a href="#" class="github-btn" target="_blank">
+                            <i class="bi bi-github"></i>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- =================================================
+         PROGRAMMING PROJECTS
+    ================================================== -->
+
+    <div class="section-title">
+        <h2>
+            <i class="bi bi-code-square"></i>
+            Programming Projects
+        </h2>
+    </div>
+
+
+    <div class="row g-3">
+        <!-- C -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="program-card">
+                <div class="program-icon">
+                    <i class="bi bi-c-circle"></i>
+                </div>
+                <div>
+                    <span class="project-badge">
+                       C Project
+                    </span>
+                    <h3 class="program-title">
+                        Student Management System
+                    </h3>
+
+                    <p class="program-text">
+                        A basic C programming project
+                        using logic and functions.</br>
+                        School management system project using C programming language.
+                    </p>
+
+                    <a href="https://github.com/hemantsingh912/Student-Management-System-C-programing.git" class="small-view" target="_blank">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- C++ -->
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <div class="program-card">
+
+                <div class="program-icon">
+
+                    <i class="bi bi-c-circle-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <span class="project-badge">
+                       C++ Project
+                    </span>
+
+                    <h3 class="program-title">
+                        System Management Project
+                    </h3>
+
+                    <p class="program-text">
+                        A C++ project demonstrating
+                        object-oriented programming.</br>
+                        <i>Advanced School management system project using C++ programming language.</i>
+                    </p>
+
+                    <a href="https://github.com/hemantsingh912/Student-Management-System-Cpp-programing.git" class="small-view" target="_blank">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+      
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <div class="program-card">
+
+                <div class="program-icon">
+
+                    <i class="bi bi-cup-hot-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <span class="project-badge">
+                       Java Project
+                    </span>
+                    <h3 class="program-title">
+                        Movie Ticket Booking System
+                    </h3>
+
+                    <h3 class="program-title"> 
+                        "Processing" 
+                    </h3>
+
+                    <p class="program-text">
+                        A Java project for booking movie tickets
+                        with a simple user interface.
+                    </p>
+
+                    <a href="https://github.com/hemantsingh912/Movie_Ticketing-multiplex-_Management_System.git" class="small-view" target="_blank">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div> 
+
+    <div class="back-profile">
+
+        <a href="index.html" class="back-btn">
+            <i class="bi bi-arrow-left"></i>
+            Back to Profile
+        </a>
+    </div>
+
+</main>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
