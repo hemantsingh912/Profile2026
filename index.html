@@ -1088,75 +1088,67 @@
 <div id="contact-form-wrapper">
 
     <form
-    id="contact-form"
-    class="contact-form h-100"
-    action="https://formsubmit.co/singhhemant2945@gmail.com"
-    method="POST">
+        id="contact-form"
+        class="contact-form h-100"
+        action="https://formsubmit.co/singhhemant2945@gmail.com"
+        method="POST">
 
-    <!-- Email subject -->
-    <input
-        type="hidden"
-        name="_subject"
-        value="New Contact Message - Hemant Singh Portfolio">
+        <input
+            type="hidden"
+            name="_subject"
+            value="New Contact Message - Hemant Singh Portfolio">
 
-    <!-- Redirect back to portfolio after submission -->
-    <input
-        type="hidden"
-        name="_next"
-        value="https://hemantsingh912.github.io/Profile2026/#contact">
+        <input
+            type="hidden"
+            name="_next"
+            value="https://hemantsingh912.github.io/Profile2026/#contact">
 
-    <!-- Disable CAPTCHA -->
-    <input
-        type="hidden"
-        name="_captcha"
-        value="false">
+        <input
+            type="hidden"
+            name="_captcha"
+            value="false">
 
-    <!-- Name -->
-    <input
-        type="text"
-        name="name"
-        class="form-control"
-        placeholder="Your Name"
-        autocomplete="name"
-        required>
+        <input
+            type="text"
+            name="name"
+            class="form-control"
+            placeholder="Your Name"
+            autocomplete="name"
+            required>
 
-    <!-- Email -->
-    <input
-        type="email"
-        name="email"
-        class="form-control"
-        placeholder="Your Email"
-        autocomplete="email"
-        required>
+        <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Your Email"
+            autocomplete="email"
+            required>
 
-    <!-- Subject -->
-    <input
-        type="text"
-        name="subject"
-        class="form-control"
-        placeholder="Subject"
-        required>
+        <input
+            type="text"
+            name="subject"
+            class="form-control"
+            placeholder="Subject"
+            required>
 
-    <!-- Message -->
-    <textarea
-        name="message"
-        class="form-control"
-        placeholder="Your Message"
-        rows="6"
-        required></textarea>
+        <textarea
+            name="message"
+            class="form-control"
+            placeholder="Your Message"
+            rows="6"
+            required></textarea>
 
-    <!-- Submit button -->
-    <button
-        type="submit"
-        class="contact-submit"
-        id="send-btn">
+        <button
+            type="submit"
+            class="contact-submit"
+            id="send-btn">
 
-        Send Message
-        <i class="fa-solid fa-paper-plane ms-1"></i>
+            Send Message
+            <i class="fa-solid fa-paper-plane ms-1"></i>
 
-    </button>
+        </button>
 
-</form>
+    </form>
 
 </div>
 
@@ -1272,107 +1264,91 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    
-// CONTACT FORM
+    // CONTACT FORM
+    const form = document.getElementById("contact-form");
+    const sendButton = document.getElementById("send-btn");
+    const formStatus = document.getElementById("form-status");
 
-// CONTACT FORM
+    if (form && sendButton) {
 
+        form.addEventListener("submit", async function (event) {
 
-if (form && sendButton) {
-    form.addEventListener("submit", async function (event) {
-        event.preventDefault();
+            event.preventDefault();
 
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
 
-        const originalText = sendButton.innerHTML;
+            const originalText = sendButton.innerHTML;
 
-        sendButton.disabled = true;
-        sendButton.innerHTML = "Sending Message...";
-
-        if (formStatus) {
-            formStatus.textContent = "";
-        }
-
-        try {
-            const response = await fetch(
-                "https://formsubmit.co/ajax/singhhemant2945@gmail.com",
-                {
-                    method: "POST",
-                    body: new FormData(form),
-                    headers: {
-                        "Accept": "application/json"
-                    }
-                }
-            );
-
-            
-const result = await response.json();
-
-console.log("FormSubmit HTTP status:", response.status);
-console.log("FormSubmit response:", result);
-
-if (
-    !response.ok ||
-    !(
-        result.success === true ||
-        result.success === "true"
-    )
-) {
-    throw new Error(
-        result.message ||
-        JSON.stringify(result) ||
-        "Message submission failed"
-    );
-}
-
-form.reset();
-
-
-            // Success message screen par nahi dikhana hai
-
-        } catch (error) {
-            console.error("Contact form error:", error);
+            sendButton.disabled = true;
+            sendButton.innerHTML = "Sending Message...";
 
             if (formStatus) {
-                formStatus.textContent =
-                    "Message could not be sent. Please try again.";
+                formStatus.textContent = "";
             }
-        } finally {
-            sendButton.disabled = false;
-            sendButton.innerHTML = originalText;
-        }
-    });
-}
 
+            try {
 
+                const response = await fetch(
+                    "https://formsubmit.co/ajax/singhhemant2945@gmail.com",
+                    {
+                        method: "POST",
+                        body: new FormData(form),
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    }
+                );
 
+                const result = await response.json();
 
+                console.log("FormSubmit HTTP status:", response.status);
+                console.log("FormSubmit response:", result);
 
-    // SEND ANOTHER MESSAGE
-    // SEND ANOTHER MESSAGE
-if (sendAnother) {
+                if (
+                    !response.ok ||
+                    !(
+                        result.success === true ||
+                        result.success === "true"
+                    )
+                ) {
+                    throw new Error(
+                        result.message ||
+                        JSON.stringify(result) ||
+                        "Message submission failed"
+                    );
+                }
 
-    sendAnother.addEventListener("click", function () {
+                // Clear all form inputs after successful submission
+                form.reset();
 
-        successMessage.hidden = true;
-        formWrapper.hidden = false;
+                // No success message will be displayed.
 
-        form.reset();
-        formStatus.textContent = "";
+            } catch (error) {
 
-        form.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
+                console.error("Contact form error:", error);
+
+                if (formStatus) {
+                    formStatus.textContent =
+                        "Message could not be sent. Please try again.";
+                }
+
+            } finally {
+
+                sendButton.disabled = false;
+                sendButton.innerHTML = originalText;
+
+            }
+
         });
 
-    });
-}
+    }
 
 });
 </script>
+
 
 
 
