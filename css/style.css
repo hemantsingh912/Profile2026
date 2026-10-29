@@ -473,7 +473,7 @@ width: 100%;
 }
 
 .about-initials span {
-    font-size: 58px;
+    font-size: 1em;
     font-weight: 800;
     line-height: 1;
 }
@@ -1632,12 +1632,15 @@ width: 100%;
 
 @media (max-width: 767px) {
     .about-box .about-initials {
-        font-size: 58px;
+        font-size: 52px;
+        font-weight: 800;
         line-height: 1;
+        align-items: center;
     }
 
     .about-box .about-initials span {
-        font-size: 58px;
+        font-size: 1em;
+        font-weight: 800;
         line-height: 1;
     }
 }
