@@ -1573,3 +1573,60 @@ width: 100%;
 #contact {
     scroll-margin-top: 75px;
 }
+
+/* ABOUT CARD - MOBILE FIX */
+
+@media (max-width: 767px) {
+
+    .about-box {
+        width: 100%;
+        max-width: 330px;
+        height: auto;
+        min-height: 0;
+        padding: 28px 18px;
+        overflow: visible;
+        justify-content: center;
+    }
+
+    .about-box .about-icon {
+        flex-shrink: 0;
+        margin-bottom: 18px;
+    }
+
+    .about-box .about-initials {
+        font-size: 58px;
+        line-height: 1;
+        margin-bottom: 18px;
+    }
+
+    .about-box h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .about-box .about-role {
+        font-size: 12px;
+    }
+
+    .about-box .about-divider {
+        margin: 18px 0;
+    }
+
+    .about-box .about-description {
+        margin-bottom: 18px;
+    }
+
+    .about-box .about-badges {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .about-box .about-badges span {
+        padding: 9px 14px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}
