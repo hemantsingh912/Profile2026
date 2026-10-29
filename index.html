@@ -1303,23 +1303,28 @@ if (form && sendButton) {
                 }
             );
 
-            const result = await response.json();
+            
+const result = await response.json();
 
-            // API success true ya "true", dono check honge
-            if (
-                !response.ok ||
-                !(
-                    result.success === true ||
-                    result.success === "true"
-                )
-            ) {
-                throw new Error(
-                    result.message || "Message submission failed"
-                );
-            }
+console.log("FormSubmit HTTP status:", response.status);
+console.log("FormSubmit response:", result);
 
-            // Successful response ke baad form clear hoga
-            form.reset();
+if (
+    !response.ok ||
+    !(
+        result.success === true ||
+        result.success === "true"
+    )
+) {
+    throw new Error(
+        result.message ||
+        JSON.stringify(result) ||
+        "Message submission failed"
+    );
+}
+
+form.reset();
+
 
             // Success message screen par nahi dikhana hai
 
