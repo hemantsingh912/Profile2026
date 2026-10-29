@@ -1084,72 +1084,79 @@
 <div class="col-lg-6">
 
 
-`
+
 <div id="contact-form-wrapper">
 
     <form
-        id="contact-form"
-        class="contact-form h-100"
-        action="https://formsubmit.co/singhhemant2945@gmail.com"
-        method="POST">
+    id="contact-form"
+    class="contact-form h-100"
+    action="https://formsubmit.co/singhhemant2945@gmail.com"
+    method="POST">
 
-        <input
-            type="hidden"
-            name="_subject"
-            value="New Contact Message - Hemant Singh Portfolio">
+    <!-- Email subject -->
+    <input
+        type="hidden"
+        name="_subject"
+        value="New Contact Message - Hemant Singh Portfolio">
 
-        <input
-            type="hidden"
-            name="_captcha"
-            value="true">
+    <!-- Redirect back to portfolio after submission -->
+    <input
+        type="hidden"
+        name="_next"
+        value="https://hemantsingh912.github.io/Profile2026/#contact">
 
-        <input
-            type="text"
-            name="name"
-            class="form-control"
-            placeholder="Your Name"
-            autocomplete="name"
-            required>
+    <!-- Disable CAPTCHA -->
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false">
 
-        <input
-            type="email"
-            name="email"
-            class="form-control"
-            placeholder="Your Email"
-            autocomplete="email"
-            required>
+    <!-- Name -->
+    <input
+        type="text"
+        name="name"
+        class="form-control"
+        placeholder="Your Name"
+        autocomplete="name"
+        required>
 
-        <input
-            type="text"
-            name="subject"
-            class="form-control"
-            placeholder="Subject"
-            required>
+    <!-- Email -->
+    <input
+        type="email"
+        name="email"
+        class="form-control"
+        placeholder="Your Email"
+        autocomplete="email"
+        required>
 
-        <textarea
-            name="message"
-            class="form-control"
-            placeholder="Your Message"
-            rows="6"
-            required></textarea>
+    <!-- Subject -->
+    <input
+        type="text"
+        name="subject"
+        class="form-control"
+        placeholder="Subject"
+        required>
 
-        <button
-            type="submit"
-            class="contact-submit"
-            id="send-btn">
+    <!-- Message -->
+    <textarea
+        name="message"
+        class="form-control"
+        placeholder="Your Message"
+        rows="6"
+        required></textarea>
 
-            Send Message
-            <i class="fa-solid fa-paper-plane ms-1"></i>
+    <!-- Submit button -->
+    <button
+        type="submit"
+        class="contact-submit"
+        id="send-btn">
 
-        </button>
+        Send Message
+        <i class="fa-solid fa-paper-plane ms-1"></i>
 
-        <p
-            id="form-status"
-            role="status"
-            aria-live="polite">
-        </p>
+    </button>
 
-    </form>
+</form>
 
 </div>
 
@@ -1269,9 +1276,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // CONTACT FORM
 
 // CONTACT FORM
-const form = document.getElementById("contact-form");
-const formStatus = document.getElementById("form-status");
-const sendButton = document.getElementById("send-btn");
+
 
 if (form && sendButton) {
     form.addEventListener("submit", async function (event) {
@@ -1347,23 +1352,24 @@ form.reset();
 
 
     // SEND ANOTHER MESSAGE
-    if (sendAnother) {
+    // SEND ANOTHER MESSAGE
+if (sendAnother) {
 
-        sendAnother.addEventListener("click", function () {
+    sendAnother.addEventListener("click", function () {
 
-            successMessage.hidden = true;
-            formWrapper.hidden = false;
+        successMessage.hidden = true;
+        formWrapper.hidden = false;
 
-            form.reset();
-            formStatus.textContent = "";
+        form.reset();
+        formStatus.textContent = "";
 
-            form.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
+        form.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
         });
-    }
+
+    });
+}
 
 });
 </script>
