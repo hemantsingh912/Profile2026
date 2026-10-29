@@ -473,6 +473,7 @@ line-height: 1;
 }
 
 .about-initials span {
+    background: linear-gradient(135deg, #168cff, #704cff);
 font-size: 1em;
 font-weight: 800;
 line-height: 1;
