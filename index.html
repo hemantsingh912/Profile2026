@@ -1267,14 +1267,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 // CONTACT FORM
+
+// CONTACT FORM
 const form = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 const sendButton = document.getElementById("send-btn");
 
-if (form) {
-
+if (form && sendButton) {
     form.addEventListener("submit", async function (event) {
-
         event.preventDefault();
 
         if (!form.checkValidity()) {
@@ -1286,10 +1286,12 @@ if (form) {
 
         sendButton.disabled = true;
         sendButton.innerHTML = "Sending Message...";
-        formStatus.textContent = "";
+
+        if (formStatus) {
+            formStatus.textContent = "";
+        }
 
         try {
-
             const response = await fetch(
                 "https://formsubmit.co/ajax/singhhemant2945@gmail.com",
                 {
@@ -1303,34 +1305,38 @@ if (form) {
 
             const result = await response.json();
 
-            if (!response.ok || result.success !== "true") {
+            // API success true ya "true", dono check honge
+            if (
+                !response.ok ||
+                !(
+                    result.success === true ||
+                    result.success === "true"
+                )
+            ) {
                 throw new Error(
                     result.message || "Message submission failed"
                 );
             }
 
+            // Successful response ke baad form clear hoga
             form.reset();
 
-            // formStatus.textContent =
-            //     "Message sent successfully! Thank you for contacting me.";
+            // Success message screen par nahi dikhana hai
 
         } catch (error) {
-
             console.error("Contact form error:", error);
 
-            formStatus.textContent =
-                "Message could not be sent. Please try again.";
-
+            if (formStatus) {
+                formStatus.textContent =
+                    "Message could not be sent. Please try again.";
+            }
         } finally {
-
             sendButton.disabled = false;
             sendButton.innerHTML = originalText;
-
         }
-
     });
-
 }
+
 
 
 
