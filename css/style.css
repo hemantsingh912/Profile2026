@@ -464,19 +464,18 @@ width: 100%;
 /* HS initials */
 
 .about-initials {
-    font-size: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 58px;
     font-weight: 800;
     line-height: 1;
-    letter-spacing: -4px;
-    margin-bottom: 20px;
-
-    color: white;
 }
 
 .about-initials span {
-    background: linear-gradient(135deg, #168cff, #704cff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1;
 }
 
 /* Name */
