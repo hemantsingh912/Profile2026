@@ -563,19 +563,57 @@ width: 100%;
 /* Mobile */
 
 @media (max-width: 767px) {
-    .about-box {
-        width: 300px;
-        min-height: 400px;
-        padding: 30px 20px;
-    }
+   
+.about-box {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    min-height: 0;
+    padding: 25px 15px;
+    margin: 0 auto 20px;
+    overflow: visible;
+    justify-content: center;
+}
 
-    .about-initials {
-        font-size: 58px;
-    }
+.about-box .about-initials {
+    font-size: 52px;
+    margin-bottom: 14px;
+}
 
-    .about-box h3 {
-        font-size: 25px;
-    }
+.about-box h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.about-box .about-role {
+    font-size: 12px;
+}
+
+.about-box .about-description {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.about-box .about-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+}
+
+.about-box .about-badges span {
+    padding: 5px 9px;
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.about-box .about-badges span i {
+    font-size: 11px;
+    margin-right: 3px;
+}
+
 }
 
 
