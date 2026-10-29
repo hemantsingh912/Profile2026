@@ -1630,3 +1630,15 @@ width: 100%;
         white-space: nowrap;
     }
 }
+
+@media (max-width: 767px) {
+    .about-box .about-initials {
+        font-size: 58px;
+        line-height: 1;
+    }
+
+    .about-box .about-initials span {
+        font-size: 58px;
+        line-height: 1;
+    }
+}
