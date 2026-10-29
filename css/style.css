@@ -467,6 +467,8 @@ width: 100%;
     display: flex;
     align-items: baseline;
     justify-content: center;
+    gap: 0;
+
     font-size: 58px;
     font-weight: 800;
     line-height: 1;
@@ -477,11 +479,9 @@ width: 100%;
     font-size: 1em;
     font-weight: 800;
     line-height: 1;
-
-    background: linear-gradient(135deg, #168cff, #704cff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #168cff;
+    background: none;
+    -webkit-text-fill-color: #168cff;
 }
 
 
